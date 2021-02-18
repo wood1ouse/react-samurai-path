@@ -1,0 +1,35 @@
+@import "variables";
+@import "mixins";
+
+.dialogs {
+  &__items {
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+  }
+
+  &__item {
+    @include border-default();
+    display: flex;
+    align-items: center;
+    transition: background-color 0.4s linear;
+
+    & span {
+      margin: 0 auto;
+    }
+    &:hover {
+      cursor: pointer;
+      background-color: $primary-color;
+    }
+  }
+  &__name {color: white;}
+
+  &__img {
+    @include flex-center();
+    border: 1px solid $primary-color;
+    background-color: black;
+    border-radius: 50px;
+    width: 30px;
+    height: 30px;
+  }
+}

@@ -1,6 +1,7 @@
 @import "header";
 @import "navbar";
-@import "content";
+@import "mainpage";
+@import "dialogs";
 @import url('https://fonts.googleapis.com/css2?family=Varela&display=swap');
 
 *{
@@ -8,6 +9,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+a{
+  text-decoration: none;
+  color: #fff;
 }
 
 body {
@@ -25,5 +31,6 @@ code {
 }
 
 .wrapper {
-  display: grid;
+  height: 100%;
+  max-width: 100%;
 }

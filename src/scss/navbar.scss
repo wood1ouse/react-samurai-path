@@ -1,7 +1,7 @@
 @import "variables";
 .navbar {
   display: flex;
-  & div{
+  & a{
     font-size: 14px;
     margin-right: 12px;
     color: #fff;
@@ -10,6 +10,9 @@
     border: 1.5px solid $primary-color;
     border-radius: 25px;
     transition: background-color 0.4s linear;
+    &.activeLink{
+      background-color: $primary-color;
+    }
 
     &:hover{
       background-color: $primary-color;

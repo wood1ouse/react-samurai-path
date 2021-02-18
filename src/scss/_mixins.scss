@@ -1,0 +1,16 @@
+@import "variables";
+
+@mixin border-default() {
+  border: 1px solid $primary-color;
+  border-radius: 25px;
+}
+@mixin flex-column() {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin flex-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

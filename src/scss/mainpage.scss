@@ -1,0 +1,37 @@
+@import "variables";
+@import "mixins";
+
+.profile{
+  @include flex-column();
+  @include border-default();
+  justify-content: center;
+  height: 300px;
+  background-color: #1a1a1d;
+  padding: 5px;
+  &__img {
+    @include flex-center();
+    margin-left: 20px;
+    border-radius: 50px;
+    width: 100px;
+    height: 100px;
+    background-color: $primary-color;
+  }
+  &__status{
+    background-color: $primary-color;
+    color: #fff;
+  }
+  &__personal{
+    @include flex-column();
+    color: white;
+    & > *{
+      @include border-default();
+      width: 150px;
+      text-align: center;
+      margin-top: 10px;
+    }
+  }
+}
+
+
+
+
