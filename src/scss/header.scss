@@ -1,16 +1,17 @@
 @import "variables";
+@import "mixins";
 
 .header{
+  @include border-default();
+  padding: 10px;
   background: #1a1a1d;
-  height: $header-height;
+  height: $header-height + 5px;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
 
 .logo{
   display: flex;
-  color: white;
   font-weight: bold;
   align-items: center;
   & > * {

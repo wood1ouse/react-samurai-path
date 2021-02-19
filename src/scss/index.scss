@@ -1,10 +1,15 @@
 @import "header";
 @import "navbar";
-@import "mainpage";
+@import "profile";
 @import "dialogs";
+@import "mixins";
+@import "variables";
+@import "scrollbar";
 @import url('https://fonts.googleapis.com/css2?family=Varela&display=swap');
 
+
 *{
+  color: white;
   font-family: 'Varela', 'sans-serif';
   margin: 0;
   padding: 0;
@@ -34,3 +39,4 @@ code {
   height: 100%;
   max-width: 100%;
 }
+

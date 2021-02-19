@@ -1,0 +1,15 @@
+@import "variables";
+@import "mixins";
+
+::-webkit-scrollbar {
+  width: 20px;
+}
+
+::-webkit-scrollbar-thumb {
+  transition: $transition-default;
+  @include border-default();
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: $primary-color;
+}

@@ -1,15 +1,17 @@
 @import "variables";
+@import "mixins";
+
 .navbar {
   display: flex;
+  justify-content: center;
   & a{
+    @include border-default();
     font-size: 14px;
-    margin-right: 12px;
+    margin-right: 10px;
     color: #fff;
     cursor: pointer;
     padding: 5px;
-    border: 1.5px solid $primary-color;
-    border-radius: 25px;
-    transition: background-color 0.4s linear;
+    transition: $transition-default;
     &.activeLink{
       background-color: $primary-color;
     }

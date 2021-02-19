@@ -5,11 +5,11 @@ export default class extends React.Component {
     render() {
         return (
             <nav className="navbar">
-                <div>
-                    <NavLink to="/profile" activeClassName = "activeLink">Profile</NavLink>
+                <div className="navbar__button">
+                    <NavLink to="/profile" activeClassName="activeLink">Profile</NavLink>
                 </div>
-                <div>
-                    <NavLink to="/dialogs" activeClassName = "activeLink">Messages</NavLink>
+                <div className="navbar__button">
+                    <NavLink to="/dialogs" activeClassName="activeLink">Messages</NavLink>
                 </div>
             </nav>
         )

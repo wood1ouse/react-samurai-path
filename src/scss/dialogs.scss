@@ -2,34 +2,61 @@
 @import "mixins";
 
 .dialogs {
+  display: flex;
+
   &__items {
     display: flex;
     flex-direction: column;
-    width: 300px;
+    width: $dialog-token-width;
+    font-weight: bold;
+
   }
 
   &__item {
     @include border-default();
     display: flex;
     align-items: center;
-    transition: background-color 0.4s linear;
+    transition: $transition-default;
 
-    & span {
-      margin: 0 auto;
-    }
     &:hover {
       cursor: pointer;
       background-color: $primary-color;
     }
+
+    &.active {
+      background-color: $primary-color;
+    }
   }
-  &__name {color: white;}
+
+  &__name {
+    margin: 0 auto;
+  }
 
   &__img {
     @include flex-center();
     border: 1px solid $primary-color;
-    background-color: black;
+    background-color: #000000;
     border-radius: 50px;
     width: 30px;
     height: 30px;
   }
+
+  &__window {
+    @include flex-column();
+    @include border-default();
+    justify-content: space-around;
+    align-items: flex-start;
+    text-align: center;
+    width: 100%;
+    background-color: #1a1a1d;
+  }
+
+  &__message {
+    @include border-default();
+    background-color: $primary-color;
+    margin-left: 10px;
+    border-bottom-left-radius: 1px;
+    padding: 5px;
+  }
 }
+
