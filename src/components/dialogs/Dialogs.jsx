@@ -1,25 +1,30 @@
 import React from "react";
-import DialogsItem from "../dialogs/DialogsItem";
-import DialogsMessage from "./DialogsMessage";
+import DialogsMessageIn from "./DialogsMessageIn";
+import DialogsItem from "./DialogsItem";
+import DialogsMessageOut from "./DialogsMessageOut";
 
-export default class Dialogs extends React.Component {
-    render() {
-        return (
-            <div className="dialogs">
-                <div className="dialogs__items">
-                    <DialogsItem name="Greg" id="1"/>
-                    <DialogsItem name="Ann" id="2"/>
-                    <DialogsItem name="Mark" id="3"/>
-                    <DialogsItem name="Rick" id="4"/>
-                    <DialogsItem name="Roll" id="5"/>
-                </div>
-                <div className="dialogs__window">
-                    <DialogsMessage msg="Hello?"/>
-                    <DialogsMessage msg="I'm glad you can see this?"/>
-                    <DialogsMessage msg="So, yes the plan?"/>
-                    <DialogsMessage msg="Let's start with?"/>
-                </div>
-            </div>
-        )
+
+const Dialogs  = (props) => {
+    let dialogsItem = props.items.dialogsData.map(m => <DialogsItem id = {m.id} name = {m.name}/>)
+    let dialogsMessageOut = props.messages.messagesDataOut.map(m => <DialogsMessageOut id = {m.id} msg = {m.msg}/>)
+    let dialogsMessageIn = props.messages.messagesDataIn.map(m => <DialogsMessageIn id = {m.id} msg = {m.msg}/>)
+    let items = [];
+
+    for (let i = 0; i < dialogsMessageIn.length + dialogsMessageOut.length; i++) {
+        items.push(dialogsMessageIn[i], dialogsMessageOut[i])
     }
+
+    return (
+        <div className="dialogs">
+            <div className="dialogs__items">
+                {dialogsItem}
+            </div>
+            <div className="dialogs__window">
+                {items}
+            </div>
+        </div>
+    )
 }
+
+export default Dialogs
+

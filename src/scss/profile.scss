@@ -44,15 +44,21 @@
     display: flex;
     align-items: center;
     margin-top: 10px;
+    transition: $transition-default;
+    border-radius: 25px;
     &__img{
       @include flex-center();
-      border-radius: 25px;
       background-color: $primary-color;
+      border-radius: 25px;
       width: 30px;
       height: 30px;
     }
     &__content{
       margin-left: 5px;
+    }
+    &:hover{
+      background-color: $primary-color;
+      cursor: pointer;
     }
   }
 }

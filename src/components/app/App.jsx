@@ -5,18 +5,23 @@ import Profile from "../profile/Profile";
 import Dialogs from "../dialogs/Dialogs";
 import '../../scss/index.scss';
 
-export default class App extends React.Component {
-    render() {
-        return (
-            <BrowserRouter>
-                <div className="wrapper">
-                    <Header/>
-                    <div className="content">
-                        <Route path='/profile' component={Profile}/>
-                        <Route path='/dialogs' component={Dialogs}/>
-                    </div>
+
+const App = (props) => {
+    return (
+        <BrowserRouter>
+            <div className="wrapper">
+                <Header/>
+                <div className="content">
+                    <Route path='/profile'
+                           render={() => <Profile profile={props.appState.profilePage}/>}/>
+                    <Route path='/dialogs'
+                           render={() => <Dialogs items={props.appState.dialogsPage}
+                                                  messages={props.appState.dialogsPage}/>}/>
+
                 </div>
-            </BrowserRouter>
-        )
-    }
+            </div>
+        </BrowserRouter>
+    )
 }
+
+export default App

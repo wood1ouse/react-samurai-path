@@ -1,12 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './scss/index.scss';
 import App from './components/app/App.jsx';
 import reportWebVitals from './reportWebVitals';
+import state from "./redux/state";
+import './scss/index.scss';
+
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <App appState = {state}/>
   </React.StrictMode>,
   document.getElementById('root')
 );
