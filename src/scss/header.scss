@@ -3,9 +3,9 @@
 
 .header{
   @include border-default();
+  background: $secondary-color;
+  height: $header-height;
   padding: 10px;
-  background: #1a1a1d;
-  height: $header-height + 5px;
   display: flex;
   justify-content: space-between;
 }

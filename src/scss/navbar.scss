@@ -3,19 +3,17 @@
 
 .navbar {
   display: flex;
-  justify-content: center;
   & a{
     @include border-default();
+    transition: $transition-default;
     font-size: 14px;
     margin-right: 10px;
     color: #fff;
     cursor: pointer;
     padding: 5px;
-    transition: $transition-default;
     &.activeLink{
       background-color: $primary-color;
     }
-
     &:hover{
       background-color: $primary-color;
     }

@@ -1,17 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './components/app/App.jsx';
-import reportWebVitals from './reportWebVitals';
 import state from "./redux/state";
+import reportWebVitals from './reportWebVitals';
 import './scss/index.scss';
+import {rerenderEntireTree} from "./render";
 
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App appState = {state}/>
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+rerenderEntireTree(state)
 
 
 reportWebVitals();

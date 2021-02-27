@@ -4,24 +4,24 @@
 .profile{
   @include flex-column();
   @include border-default();
+  background-color: $secondary-color;
   border-width: 0 1px 1px 1px;
   height: 600px;
-  background-color: #1a1a1d;
   padding: 5px;
   &__info {
 
   }
   &__img {
     @include flex-center();
+    background-color: $primary-color;
     margin-left: 20px;
     border-radius: 50px;
     width: 100px;
     height: 100px;
-    background-color: $primary-color;
   }
   &__status{
-    font-weight: bold;
     background-color: $primary-color;
+    font-weight: bold;
   }
   &__personal{
     @include flex-column();
@@ -34,6 +34,8 @@
   }
   &__posts{
     overflow: auto;
+    display: flex;
+    flex-direction: column-reverse;
   }
   &__posts__title{
     font-weight: 900;
@@ -41,10 +43,10 @@
     font-size: 24px;
   }
   &__post{
+    transition: $transition-default;
     display: flex;
     align-items: center;
     margin-top: 10px;
-    transition: $transition-default;
     border-radius: 25px;
     &__img{
       @include flex-center();

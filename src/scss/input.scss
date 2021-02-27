@@ -1,0 +1,44 @@
+@import "variables";
+@import "mixins";
+
+.input-field {
+  @include border-default();
+  &.msg{
+    justify-self: center;
+    height: $header-height;
+  }
+  display: flex;
+  margin-top: 5px;
+  & textarea, button {
+    font-size: 16px;
+  }
+  & textarea {
+    background-color: $secondary-color;
+    padding-left: 15px;
+    border: 0;
+    resize: none;
+    border-radius: 25px;
+    width: 100%;
+    outline: none;
+    &:focus::placeholder{
+      color: transparent;
+    }
+  }
+  & button {
+    @include flex-center();
+    @include border-default();
+    transition: $transition-default;
+    background-color: $secondary-color;
+    width: 120px;
+    cursor: pointer;
+    outline: none;
+    &:hover{
+      background-color: $primary-color;
+    }
+    &.msg {
+      border: 0;
+      width: 70px;
+    }
+  }
+
+}
