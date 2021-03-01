@@ -13,7 +13,9 @@ const Profile = (props) => {
                 <span className="profile__posts__title">My Posts</span>
                 <ProfilePosts posts={props.profile.myPostsData}/>
             </div>
-            <ProfilePostInput addPost = {props.addPost}/>
+            <ProfilePostInput addPost={props.addPost}
+                              newPostText={props.profile.newPostText}
+                              updateNewPostText={props.updateNewPostText}/>
         </div>
     )
 }

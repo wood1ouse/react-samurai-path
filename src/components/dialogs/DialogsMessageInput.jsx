@@ -1,16 +1,20 @@
 import React from "react";
 import SendIcon from '@material-ui/icons/Send';
 
-const DialogsMessageInput = () => {
+const DialogsMessageInput = (props) => {
     let MessageContent = React.createRef();
-    let showText = () => {
-        let text = MessageContent.current.value;
-        alert(text)
+    let addMessage = () => {
+        props.addMessage()
+    }
+    let onMessageChanged = () => {
+        let text = MessageContent.current.value
+        props.updateNewMessageText(text)
     }
     return (
         <div className="input-field msg">
-            <textarea ref={MessageContent} placeholder="Write a message..."/>
-            <button onClick={showText} className="addButton msg"><SendIcon/></button>
+            <textarea ref={MessageContent} onChange={onMessageChanged} placeholder="Write a message..."
+                      value={props.newMessageText}/>
+            <button onClick={addMessage} className="addButton msg"><SendIcon/></button>
         </div>
     )
 }

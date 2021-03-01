@@ -13,10 +13,12 @@ const App = (props) => {
             <div className="content">
                 <Route path='/profile'
                        render={() => <Profile profile={props.appState.profilePage}
-                                              addPost = {props.addPost}/>}/>
+                                              addPost = {props.addPost}
+                                              updateNewPostText = {props.updateNewPostText}/>}/>
                 <Route path='/dialogs'
-                       render={() => <Dialogs items={props.appState.dialogsPage}
-                                              messages={props.appState.dialogsPage}/>}/>
+                       render={() => <Dialogs dialogs={props.appState.dialogsPage}
+                                              addMessage = {props.addMessage}
+                                              updateNewMessageText = {props.updateNewMessageText}/>}/>
             </div>
         </div>
     )
