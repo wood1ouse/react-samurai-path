@@ -1,14 +1,16 @@
 import React from "react";
 import SendIcon from '@material-ui/icons/Send';
+import {addMessageActionCreator, updateNewMessageTextActionCreator} from "../../redux/state";
 
 const DialogsMessageInput = (props) => {
     let MessageContent = React.createRef();
     let addMessage = () => {
-        props.addMessage()
+        props.dispatch(addMessageActionCreator())
     }
     let onMessageChanged = () => {
         let text = MessageContent.current.value
-        props.updateNewMessageText(text)
+        let action = updateNewMessageTextActionCreator(text)
+        props.dispatch(action)
     }
     return (
         <div className="input-field msg">
