@@ -1,5 +1,5 @@
 import React from 'react';
-import store from "./redux/state";
+import store from "./redux/reduxStore";
 import './scss/index.scss';
 import ReactDOM from "react-dom";
 import {BrowserRouter} from "react-router-dom";
@@ -10,7 +10,7 @@ let rerenderEntireTree = (state) => {
     ReactDOM.render(
         <React.StrictMode>
             <BrowserRouter>
-                <App appState={state} dispatch = {store.dispatch.bind(store)}/>
+                <App state={state} dispatch = {store.dispatch.bind(store)} store = {store}/>
             </BrowserRouter>
         </React.StrictMode>,
         document.getElementById('root')
@@ -19,4 +19,7 @@ let rerenderEntireTree = (state) => {
 
 rerenderEntireTree(store.getState())
 
-store.subscribe(rerenderEntireTree)
+store.subscribe(() => {
+    let state = store.getState()
+    rerenderEntireTree(state)
+})

@@ -12,11 +12,9 @@ const App = (props) => {
             <Header/>
             <div className="content">
                 <Route path='/profile'
-                       render={() => <Profile profile={props.appState.profilePage}
-                                              dispatch = {props.dispatch}/>}/>
+                       render={() => <Profile store = {props.store} state = {props.state.profilePage} dispatch = {props.state.dispatch}/>}/>
                 <Route path='/dialogs'
-                       render={() => <Dialogs dialogs={props.appState.dialogsPage}
-                                              dispatch = {props.dispatch}/>}/>
+                       render={() => <Dialogs store = {props.store} state = {props.state.dialogsPage} dispatch = {props.state.dispatch}/>}/>
             </div>
         </div>
     )
