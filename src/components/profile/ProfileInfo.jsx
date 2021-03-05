@@ -10,7 +10,7 @@ const ProfileInfo = (props) => {
             <span className="profile__personal">
                             <span className="profile__status">{props.status}</span>
                             <span className="profile__name">{props.name}</span>
-                            <span className="profile__lastname">{props.lastname}</span>
+                            <span className="profile__lastname">{props.lastName}</span>
                         </span>
         </div>
     )

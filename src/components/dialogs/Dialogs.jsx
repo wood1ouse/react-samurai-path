@@ -6,9 +6,9 @@ import DialogsMessageInputContainer from "./DialogsMessageInputContainer";
 
 
 const Dialogs = (props) => {
-    let dialogsItem = props.state.dialogsData.map(m => <DialogsItem id={m.id} name={m.name}/>)
-    let dialogsMessageOut = props.state.messagesDataOut.map(m => <DialogsMessageOut id={m.id} msg={m.msg}/>)
-    let dialogsMessageIn = props.state.messagesDataIn.map(m => <DialogsMessageIn id={m.id} msg={m.msg}/>)
+    let dialogsItem = props.dialogsData.map(m => <DialogsItem id={m.id} name={m.name}/>)
+    let dialogsMessageOut = props.messagesDataOut.map(m => <DialogsMessageOut id={m.id} msg={m.msg}/>)
+    let dialogsMessageIn = props.messagesDataIn.map(m => <DialogsMessageIn id={m.id} msg={m.msg}/>)
     let items = [];
 
     for (let i = 0; i < dialogsMessageIn.length + dialogsMessageOut.length; i++) {
@@ -25,7 +25,7 @@ const Dialogs = (props) => {
                     <div className={"dialogs__window"}>
                         {items}
                     </div>
-                    <DialogsMessageInputContainer store = {props.store}/>
+                    <DialogsMessageInputContainer/>
                 </div>
             </div>
         </div>

@@ -1,19 +1,17 @@
 import React from "react";
-import ProfileInfo from "./ProfileInfo";
-import ProfilePosts from "./ProfilePosts";
 import ProfilePostInputContainer from "./ProfilePostInputContainer";
+import ProfileInfoContainer from "./ProfileInfoContainer";
+import ProfilePostsContainer from "./ProfilePostsContainer";
 
-const Profile = (props) => {
+const Profile = () => {
     return (
         <div className="content">
             <div className="profile">
-                <ProfileInfo name={props.state.profilePersonalData.firstName}
-                             lastname={props.state.profilePersonalData.lastName}
-                             status={props.state.profilePersonalData.status}/>
+                <ProfileInfoContainer/>
                 <span className="profile__posts__title">My Posts</span>
-                <ProfilePosts posts={props.state.myPostsData}/>
+                <ProfilePostsContainer/>
             </div>
-            <ProfilePostInputContainer store = {props.store}/>
+            <ProfilePostInputContainer/>
         </div>
     )
 }
