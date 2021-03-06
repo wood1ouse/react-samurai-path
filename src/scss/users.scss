@@ -1,0 +1,54 @@
+@import "mixins";
+@import "variables";
+
+.users {
+  display: flex;
+  flex-direction: column;
+
+  &__item{
+    @include border-default();
+    background-color: $secondary-color;
+    height: $header-height;
+    display: flex;
+    align-items: center;
+    &__personal {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+      & div {
+        margin-right: 5px;
+      }
+      & .users__item__country {
+        font-weight: 900;
+      }
+    }
+    &__name, &__status {
+      margin-left: 5px;
+    }
+    &__name {
+      font-weight: 900;
+    }
+    &__img {
+      @include flex-center();
+      width: $header-height;
+      height: $header-height;
+      border: 1px solid $primary-color;
+      border-radius: 50px;
+    }
+    &__status {
+      @include border-default();
+      background-color: $primary-color;
+    }
+    & button {
+      @include button-default();
+      width: $header-height;
+      height: $header-height;
+    }
+    &__name {
+      font-weight: 900;
+    }
+
+  }
+}
+
+

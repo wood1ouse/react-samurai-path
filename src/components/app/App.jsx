@@ -4,6 +4,7 @@ import Header from "../header/Header";
 import Profile from "../profile/Profile";
 import '../../scss/index.scss';
 import DialogsContainer from "../dialogs/DialogsContainer";
+import UsersContainer from "../users/UsersContainer";
 
 
 const App = () => {
@@ -15,7 +16,8 @@ const App = () => {
                        render={() => <Profile/>}/>
                 <Route path='/dialogs'
                        render={() => <DialogsContainer/>}/>
-                <Route path = '/users' render={() => <div>users</div>}/>
+                <Route path='/users'
+                       render={() => <UsersContainer/>}/>
             </div>
         </div>
     )

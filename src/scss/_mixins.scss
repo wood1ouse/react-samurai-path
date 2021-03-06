@@ -14,3 +14,15 @@
   justify-content: center;
   align-items: center;
 }
+
+@mixin button-default() {
+  @include flex-center();
+  @include border-default();
+  transition: $transition-default;
+  background-color: $secondary-color;
+  cursor: pointer;
+  outline: none;
+  &:hover{
+    background-color: $primary-color;
+  }
+}
