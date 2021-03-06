@@ -45,15 +45,20 @@ let initialState = {
 
 const profileReducer = (state = initialState, action) => {
     switch (action.type) {
-        case ADD_POST:
+        case ADD_POST: {
             let newPost = state.newPostText
-            state.myPostsData.push({id: 10, content: newPost})
-            state.newPostText = ''
-            return state
-
-        case UPDATE_NEW_POST_TEXT:
-            state.newPostText = action.newText
-            return state
+            return {
+                ...state,
+                newPostText: '',
+                myPostsData: [...state.myPostsData, {id: 10, content: newPost}]
+            }
+        }
+        case UPDATE_NEW_POST_TEXT: {
+            return {
+                ...state,
+                newPostText: action.newText
+            }
+        }
         default:
             return state
     }

@@ -15,6 +15,7 @@ const App = () => {
                        render={() => <Profile/>}/>
                 <Route path='/dialogs'
                        render={() => <DialogsContainer/>}/>
+                <Route path = '/users' render={() => <div>users</div>}/>
             </div>
         </div>
     )

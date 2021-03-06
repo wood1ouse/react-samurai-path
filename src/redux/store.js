@@ -10,35 +10,35 @@ let store = {
                 status: "Online"
             },
             myPostsData: [
-                {id: 1, content: 'Lorem ipsum'},
+                {id: 30, content: 'Lorem ipsum'},
                 {
-                    id: 2,
+                    id: 31,
                     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore'
                 },
                 {
-                    id: 3,
+                    id: 32,
                     content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation'
                 },
                 {
-                    id: 4,
+                    id: 33,
                     content: 'Lorem ipsilum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore'
                 },
-                {id: 5, content: 'Explicabo, nemo enim ipsam voluptatem  magni dolores eos qui lorem ipsilum'},
+                {id: 34, content: 'Explicabo, nemo enim ipsam voluptatem  magni dolores eos qui lorem ipsilum'},
                 {
-                    id: 6,
+                    id: 35,
                     content: 'Adipiscing elit, sed do eiusmod tempor incididunt ut labore consectetur adipiscing elit, sed do eiusmod'
                 },
                 {
-                    id: 7,
+                    id: 36,
                     content: 'Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto  sunt explicabo. Nemo enim ipsam voluptatem  magni dolores eos qui'
                 },
                 {
-                    id: 8,
+                    id: 37,
                     content: 'At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati  in  et dolorum fuga. Et harum quidem rerum'
                 },
-                {id: 9, content: 'Veritatis et quasi architecto  sunt explicabo. Nemo enim ipsam'},
+                {id: 38, content: 'Veritatis et quasi architecto  sunt explicabo. Nemo enim ipsam'},
                 {
-                    id: 10,
+                    id: 39,
                     content: 'Perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa'
                 },
             ],
@@ -53,26 +53,26 @@ let store = {
                 {id: 5, name: 'Roll'},
             ],
             messagesDataIn: [
-                {id: 1, msg: 'Hello'},
-                {id: 2, msg: 'I\'m glad you can see this'},
-                {id: 3, msg: 'So, yes the plan'},
-                {id: 4, msg: 'Let\'s start with'},
-                {id: 5, msg: 'At veroissimos ducimus o dignissimos ducimus qui blanditiis'},
-                {id: 6, msg: 'Let\'s start with'},
-                {id: 7, msg: 'Let\'s start with'},
-                {id: 8, msg: 'Let\'s start with'},
-                {id: 8, msg: 'Let\'s start with'},
+                {id: 7, msg: 'Hello'},
+                {id: 8, msg: 'I\'m glad you can see this'},
+                {id: 9, msg: 'So, yes the plan'},
+                {id: 10, msg: 'Let\'s start with'},
+                {id: 11, msg: 'At veroissimos ducimus o dignissimos ducimus qui blanditiis'},
+                {id: 12, msg: 'Let\'s start with'},
+                {id: 13, msg: 'Let\'s start with'},
+                {id: 14, msg: 'Let\'s start with'},
+                {id: 15, msg: 'Let\'s start with'},
             ],
             messagesDataOut: [
-                {id: 1, msg: 'Hello?'},
-                {id: 2, msg: 'Who are you?'},
-                {id: 3, msg: 'The plan?'},
-                {id: 4, msg: '???'},
-                {id: 5, msg: 'Man'},
-                {id: 6, msg: 'Stop sending me this shit'},
-                {id: 7, msg: 'Bru imma block you'},
-                {id: 8, msg: 'wtf'},
-                {id: 9, msg: '...'},
+                {id: 16, msg: 'Hello?'},
+                {id: 17, msg: 'Who are you?'},
+                {id: 18, msg: 'The plan?'},
+                {id: 19, msg: '???'},
+                {id: 20, msg: 'Man'},
+                {id: 21, msg: 'Stop sending me this shit'},
+                {id: 22, msg: 'Bru imma block you'},
+                {id: 23, msg: 'wtf'},
+                {id: 24, msg: '...'},
             ],
             newMessageText: ''
         }
