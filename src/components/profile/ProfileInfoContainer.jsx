@@ -9,6 +9,6 @@ let mapStateToProps = (state) => {
     }
 }
 
-const ProfileInfoContainer = connect(mapStateToProps, null)(ProfileInfo)
 
-export default ProfileInfoContainer
+
+export default connect(mapStateToProps, null)(ProfileInfo)

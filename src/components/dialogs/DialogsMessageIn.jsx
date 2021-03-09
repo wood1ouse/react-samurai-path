@@ -1,9 +1,12 @@
 import React from "react";
 
-const DialogsMessageIn = (props) => {
-    return (
-        <div className="dialogs__message in">{props.msg}</div>
-    )
+class DialogsMessageIn extends React.Component{
+    render() {
+        return (
+            <div className="dialogs__message in">{this.props.msg}</div>
+        )
+    }
+
 }
 
 export default DialogsMessageIn

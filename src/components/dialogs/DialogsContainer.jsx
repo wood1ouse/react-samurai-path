@@ -10,5 +10,4 @@ let mapStateToProps = (state) => {
 
 }
 
-const DialogsContainer = connect(mapStateToProps, null)(Dialogs)
-export default DialogsContainer
+export default connect(mapStateToProps, null)(Dialogs)

@@ -7,6 +7,5 @@ let mapStateToProps = (state) => {
     }
 }
 
-const ProfilePostsContainer = connect(mapStateToProps, null)(ProfilePosts)
 
-export default ProfilePostsContainer
+export default connect(mapStateToProps, null)(ProfilePosts)

@@ -41,6 +41,7 @@
     }
     & button {
       @include button-default();
+      transition: all 1s;
       width: $header-height;
       height: $header-height;
     }
@@ -48,6 +49,12 @@
       font-weight: 900;
     }
 
+  }
+  &__load__button {
+    @include button-default();
+    width: 200px;
+    margin: 10px auto;
+    padding: 15px;
   }
 }
 
