@@ -1,20 +1,25 @@
 import React from "react";
 
-const ProfilePostInput = (props) => {
-    let postContent = React.createRef();
-    let onAddPost = () => {
-        props.addPost()
+class ProfilePostInput extends React.Component{
+    postContent = React.createRef();
+
+    onAddPost = () => {
+        this.props.addPost()
     }
-    let onPostChanged = () => {
-        let text = postContent.current.value
-        props.updateNewPostText(text)
+    onPostChanged = () => {
+        let text = this.postContent.current.value
+        this.props.updateNewPostText(text)
     }
-    return (
-        <div className="input-field">
-            <textarea ref={postContent} placeholder="Enter your post..." value={props.newPostText}
-                      onChange={onPostChanged}/>
-            <button className="addButton" onClick={onAddPost}>Add Post</button>
-        </div>
-    )
+
+    render() {
+        return (
+            <div className="input-field">
+            <textarea ref={this.postContent} placeholder="Enter your post..." value={this.props.newPostText}
+                      onChange={this.onPostChanged}/>
+                <button className="addButton" onClick={this.onAddPost}>Add Post</button>
+            </div>
+        )
+    }
+
 }
 export default ProfilePostInput

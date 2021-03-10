@@ -1,6 +1,8 @@
 @import "mixins";
 @import "variables";
 
+
+
 .users {
   display: flex;
   flex-direction: column;
@@ -56,6 +58,27 @@
     margin: 10px auto;
     padding: 15px;
   }
+  &__pageList{
+    background-color: $secondary-color;
+    @include border-default;
+    display: flex;
+    justify-content: space-around;
+    &__item {
+      @include flex-center;
+      transition: $transition-default;
+      width: 30px;
+      height: 30px;
+      border-radius: 50px;
+      &:hover{
+        cursor: pointer;
+        background-color: $primary-color;
+      }
+      &.selected {
+        background-color: $primary-color;
+      }
+    }
+  }
+
 }
 
 

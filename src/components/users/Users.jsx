@@ -1,22 +1,18 @@
-import React from "react";
 import PersonIcon from "@material-ui/icons/Person";
+import ClearIcon from "@material-ui/icons/Clear";
 import AddIcon from "@material-ui/icons/Add";
-import ClearIcon from '@material-ui/icons/Clear';
-import axios from "axios";
+import React from "react";
 
-class Users extends React.Component {
-
-    componentDidMount() {
-        axios.get("https://social-network.samuraijs.com/api/1.0/users").then(response => {
-            this.props.setUsers(response.data.items)
-        })
+let Users = (props) => {
+    let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
+    let pages = []
+    for (let i = 1; i <= pagesCount; i++) {
+        pages.push(i)
     }
-
-    render() {
         return (
-            <div>
+            <>
                 <div>
-                    {this.props.users.map(u =>
+                    {props.users.map(u =>
                         <div className="users">
                             <div className="users__item">
                                 <div className="users__item__img">
@@ -38,10 +34,10 @@ class Users extends React.Component {
                                     <button>
                                         {u.followed
                                             ? <button onClick={() => {
-                                                this.props.unfollow(u.id)
+                                                props.unfollow(u.id)
                                             }}><ClearIcon/></button>
                                             : <button onClick={() => {
-                                                this.props.follow(u.id)
+                                                props.follow(u.id)
                                             }}><AddIcon style={{fontSize: "30px"}}/></button>}
                                     </button>
                                 </div>
@@ -49,12 +45,15 @@ class Users extends React.Component {
                         </div>
                     )}
                 </div>
-            </div>
-
-
+                <div className="users__pageList">
+                    {pages.map(p => {
+                        return <span
+                            className={props.currentPage === p ? "users__pageList__item selected" : "users__pageList__item"}
+                            onClick={(e) => {props.onPageChanged(p)}}>{p}</span>
+                    })}
+                </div>
+            </>
         )
-    }
-
 
 }
 
