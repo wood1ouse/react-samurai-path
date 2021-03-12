@@ -7,10 +7,11 @@ const TOGGLE_IS_FETCHING = 'TOGGLE_IS_FETCHING'
 let initialState = {
     users: [],
     pageSize: 10,
-    totalUsersCount: 100,
+    totalUsersCount: 200,
     currentPage: 1,
-    isFetching: true
+    isFetching: null
 }
+
 
 const usersReducer = (state = initialState, action) => {
     switch (action.type) {

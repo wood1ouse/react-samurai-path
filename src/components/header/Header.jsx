@@ -1,6 +1,6 @@
 import React from "react";
 import PeopleAltIcon from '@material-ui/icons/PeopleAlt';
-import Navbar from "../navbar/Navbar";
+import NavbarContainer from "../navbar/NavbarContainer";
 
 class Header extends React.Component{
     render() {
@@ -10,7 +10,7 @@ class Header extends React.Component{
                     <PeopleAltIcon style={{color: "white"}}/>
                     <span>Socially</span>
                 </div>
-                <Navbar/>
+                <NavbarContainer/>
             </div>
         )
     }

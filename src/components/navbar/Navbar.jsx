@@ -14,6 +14,14 @@ class Navbar extends React.Component{
                 <div className="navbar__button">
                     <NavLink to="/users" activeClassName="activeLink">Users</NavLink>
                 </div>
+
+                <div>
+                    {this.props.isAuth ? this.props.login
+                        : <div className="navbar__button">
+                            <NavLink to="/login" activeClassName="activeLink">Login</NavLink>
+                        </div>
+                    }
+                </div>
             </nav>
         )
     }
