@@ -10298,7 +10298,7 @@
     "indent-string" "^4.0.0"
     "strip-indent" "^3.0.0"
 
-"redux-thunk@~2.2.0":
+"redux-thunk@^2.2.0", "redux-thunk@~2.2.0":
   "integrity" "sha1-5hWhbha0ehmlFXZhM9Hj6Zt4UuU="
   "resolved" "https://registry.npmjs.org/redux-thunk/-/redux-thunk-2.2.0.tgz"
   "version" "2.2.0"

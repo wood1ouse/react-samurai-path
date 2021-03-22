@@ -54,6 +54,9 @@
       transition: all 1s;
       width: $header-height;
       height: $header-height;
+      &:disabled {
+        background-color: $primary-color;
+      }
     }
     &__name {
       font-weight: 900;
