@@ -3,6 +3,7 @@ import {NavLink} from "react-router-dom";
 
 class Navbar extends React.Component{
     render() {
+        console.log(this.props.isAuth);
         return (
             <nav className="navbar">
                 <div className="navbar__button">
@@ -15,13 +16,11 @@ class Navbar extends React.Component{
                     <NavLink to="/users" activeClassName="activeLink">Users</NavLink>
                 </div>
 
-                <div>
                     {this.props.isAuth ? this.props.login
                         : <div className="navbar__button">
                             <NavLink to="/login" activeClassName="activeLink">Login</NavLink>
                         </div>
                     }
-                </div>
             </nav>
         )
     }

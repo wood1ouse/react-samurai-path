@@ -3,18 +3,24 @@ import DialogsMessageIn from "./DialogsMessageIn";
 import DialogsItem from "./DialogsItem";
 import DialogsMessageOut from "./DialogsMessageOut";
 import DialogsMessageInputContainer from "./DialogsMessageInputContainer";
+import {Redirect} from "react-router";
 
 
-class Dialogs extends React.Component {
-    render() {
-        let dialogsItem = this.props.dialogsData.map(m => <DialogsItem id={m.id} name={m.name}/>)
-        let dialogsMessageOut = this.props.messagesDataOut.map(m => <DialogsMessageOut id={m.id} msg={m.msg}/>)
-        let dialogsMessageIn = this.props.messagesDataIn.map(m => <DialogsMessageIn id={m.id} msg={m.msg}/>)
-        let items = [];
+const Dialogs = (props) => {
 
-        for (let i = 0; i < dialogsMessageIn.length + dialogsMessageOut.length; i++) {
-            items.push(dialogsMessageIn[i], dialogsMessageOut[i])
-        }
+    if (!props.isAuth) {
+        return <Redirect to={'/login'}/>
+    }
+
+    let dialogsItem = props.dialogsData.map(m => <DialogsItem id={m.id} name={m.name}/>)
+    let dialogsMessageOut = props.messagesDataOut.map(m => <DialogsMessageOut id={m.id} msg={m.msg}/>)
+    let dialogsMessageIn = props.messagesDataIn.map(m => <DialogsMessageIn id={m.id} msg={m.msg}/>)
+    let items = [];
+
+    for (let i = 0; i < dialogsMessageIn.length + dialogsMessageOut.length; i++) {
+        items.push(dialogsMessageIn[i], dialogsMessageOut[i])
+    }
+
 
         return (
             <div>
@@ -33,7 +39,6 @@ class Dialogs extends React.Component {
 
 
         )
-    }
 
 }
 
