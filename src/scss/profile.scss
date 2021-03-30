@@ -20,9 +20,16 @@
     height: 100px;
   }
   &__status{
+    &__input{
+      background-color: $primary-color;
+      outline: none;
+    }
+  }
+  &__job{
     background-color: $primary-color;
     font-weight: bold;
   }
+
   &__personal{
     @include flex-column();
     & > *{

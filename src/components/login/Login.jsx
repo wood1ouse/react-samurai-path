@@ -1,8 +1,9 @@
 import React from "react";
+import LoginForm from "./LoginForm";
 
-const Login = (props) => {
+const Login = () => {
     return (
-        <h1>Login</h1>
+        <LoginForm/>
     )
 }
 

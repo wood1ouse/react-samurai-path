@@ -1,0 +1,41 @@
+@import "variables";
+@import "mixins";
+
+.login {
+  margin: 220px auto;
+  border-radius: 25px;
+  width: 35%;
+  height: 300px;
+  background-color: $secondary-color;
+  display: flex;
+  justify-content: center;
+
+  &__form {
+    width: 400px;
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    & > * {
+      margin-top: 10px;
+    }
+    &__loginName, &__password {
+      padding: 5px;
+      @include border-default;
+      background-color: $secondary-color;
+      outline: none;
+    }
+    &__button {
+      @include button-default;
+      height: 30px;
+    }
+
+    &__checkbox {
+      display: flex;
+      align-items: center;
+      margin-right: 10px;
+      & > * {
+        margin-right: 5px;
+      }
+    }
+  }
+}

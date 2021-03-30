@@ -3,7 +3,8 @@
 
 .navbar {
   display: flex;
-  & a{
+
+  & a {
     @include border-default();
     transition: $transition-default;
     font-size: 14px;
@@ -11,11 +12,17 @@
     color: #fff;
     cursor: pointer;
     padding: 5px;
-    &.activeLink{
+
+    &.activeLink {
       background-color: $primary-color;
     }
-    &:hover{
+
+    &:hover {
       background-color: $primary-color;
     }
+  }
+
+  &__username {
+    font-weight: bold;
   }
 }
