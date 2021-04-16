@@ -11,8 +11,8 @@ let mapStateToProps = (state) => {
 }
 
 const ProfilePostInputContainer = connect(mapStateToProps, {
-    addPost: addPost,
-    updateNewPostText: updateNewPostText
+    addPost,
+    updateNewPostText
 })(ProfilePostInput)
 
 export default ProfilePostInputContainer

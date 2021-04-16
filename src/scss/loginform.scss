@@ -19,10 +19,26 @@
       margin-top: 10px;
     }
     &__loginName, &__password {
-      padding: 5px;
       @include border-default;
+      width: 400px;
       background-color: $secondary-color;
+      padding: 5px;
       outline: none;
+      &[placeholder = "Login Required"], &[placeholder = "Password Required"]{
+        &::placeholder{
+          color: $primary-color;
+        }
+      }
+      &__errorIcon {
+        fill: $primary-color !important;
+        transition: $transition-default;
+        margin-left: 10px;
+        font-size: large;
+      }
+    }
+    &__field {
+      display: flex;
+      align-items: center;
     }
     &__button {
       @include button-default;
@@ -39,3 +55,6 @@
     }
   }
 }
+
+
+

@@ -1,25 +1,52 @@
 import React from "react";
+import {useFormik} from 'formik'
 
-class ProfilePostInput extends React.Component{
-    postContent = React.createRef();
+const ProfilePostInput = (props) =>{
+    const postContent = React.createRef();
 
-    onAddPost = () => {
-        this.props.addPost()
-    }
-    onPostChanged = () => {
-        let text = this.postContent.current.value
-        this.props.updateNewPostText(text)
+    const initialValues = {
+        newPostText: props.newPostText
     }
 
-    render() {
+
+    const onSubmit = (e) => {
+        props.addPost()
+        formik.handleReset(e);
+    }
+
+    const validate = values => {
+        let errors = {}
+        if (!values.newPostText) {
+            errors.newPostText = "Empty field!"
+        }
+        return errors
+    }
+
+    const formik = useFormik({
+        initialValues,
+        onSubmit,
+        validate
+    })
+
+
+    const onPostChanged = (e) => {
+        formik.handleChange(e)
+        let text = postContent.current.value
+        props.updateNewPostText(text)
+    }
+
         return (
-            <div className="input-field">
-            <textarea ref={this.postContent} placeholder="Enter your post..." value={this.props.newPostText}
-                      onChange={this.onPostChanged}/>
-                <button className="addButton" onClick={this.onAddPost}>Add Post</button>
-            </div>
+            <form onSubmit={formik.handleSubmit}>
+                <div className="input-field">
+            <textarea name = "newPostText" ref={postContent} placeholder= {formik.errors.newPostText
+                ? "Your post is empty!"
+                : "Enter your post..."} value={formik.values.newPostText}
+                      onChange = {onPostChanged}/>
+                    <button type = 'submit' className="addButton" >Add Post</button>
+                </div>
+            </form>
         )
-    }
+
 
 }
 export default ProfilePostInput
