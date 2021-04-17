@@ -1,9 +1,7 @@
 import React from "react";
 import {NavLink} from "react-router-dom";
 
-class Navbar extends React.Component{
-    render() {
-        console.log(this.props.isAuth);
+const Navbar = (props) => {
         return (
             <nav className="navbar">
                 <div className="navbar__button">
@@ -16,15 +14,16 @@ class Navbar extends React.Component{
                     <NavLink to="/users" activeClassName="activeLink">Users</NavLink>
                 </div>
 
-                {this.props.isAuth ? <div className="navbar__username">{this.props.login}</div>
-                        : <div className="navbar__button">
-                            <NavLink to="/login" activeClassName="activeLink">Login</NavLink>
-                        </div>
-                    }
+                {props.isAuth ? <select className="navbar__username" onChange={props.logout}>
+                        <option>{props.login}</option>
+                        <option className= "navbar__logout">Logout</option>
+                </select>
+                    : <div className="navbar__button">
+                        <NavLink to="/login" activeClassName="activeLink">Login</NavLink>
+                    </div>
+                }
             </nav>
         )
-    }
-
 
 }
 

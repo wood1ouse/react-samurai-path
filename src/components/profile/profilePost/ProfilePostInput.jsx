@@ -8,7 +8,6 @@ const ProfilePostInput = (props) =>{
         newPostText: props.newPostText
     }
 
-
     const onSubmit = (e) => {
         props.addPost()
         formik.handleReset(e);

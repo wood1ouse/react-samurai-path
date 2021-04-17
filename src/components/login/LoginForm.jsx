@@ -3,24 +3,23 @@ import ErrorIcon from '@material-ui/icons/Error';
 import {useFormik} from 'formik'
 
 
-
-const LoginForm = () =>{
+const LoginForm = (props) =>{
 
     const initialValues = {
-        login: '',
+        email: '',
         password: '',
         rememberMe: false,
     }
 
     const onSubmit = values => {
-        console.log(values);
+        props.login(values.email, values.password, values.rememberMe)
     }
 
     const validate = values => {
         let errors = {}
 
-        if (!values.login) {
-            errors.login = 'Login Required'
+        if (!values.email) {
+            errors.email = 'Login Required'
         }
         if (!values.password) {
             errors.password = 'Password Required'
@@ -40,10 +39,10 @@ const LoginForm = () =>{
             <form className="login__form" onSubmit={formik.handleSubmit}>
                 <div className= "login__form__field">
                     <input className="login__form__loginName"
-                           placeholder={formik.errors.login ? formik.errors.login : "Login"}
-                           name='login' onChange={formik.handleChange}
-                           value={formik.values.login}/>
-                    {formik.errors.login ? <ErrorIcon className= "login__form__loginName__errorIcon" /> : null}
+                           placeholder={formik.errors.email ? formik.errors.email : "Login"}
+                           name='email' onChange={formik.handleChange}
+                           value={formik.values.email}/>
+                    {formik.errors.email ? <ErrorIcon className= "login__form__loginName__errorIcon" /> : null}
                 </div>
 
                 <div className= "login__form__field">

@@ -10,9 +10,8 @@ let mapStateToProps = (state) => {
     }
 }
 
-const DialogsMessageInputContainer = connect(mapStateToProps, {
+
+export default connect(mapStateToProps, {
     addMessage,
     updateNewMessageText
 })(DialogsMessageInput)
-
-export default DialogsMessageInputContainer
