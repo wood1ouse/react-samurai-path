@@ -2,6 +2,7 @@ import React from "react";
 import PersonIcon from "@material-ui/icons/Person";
 import Preloader from "../../common/preloader/Preloader";
 import ProfileStatus from "./ProfileStatus";
+import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 
 const ProfileInfo = (props) => {
 
@@ -17,7 +18,7 @@ const ProfileInfo = (props) => {
 
             <span className="profile__personal">
                 <span className="profile__name">{props.profile.fullName}</span>
-                <ProfileStatus status = {props.status} updateUserStatus = {props.updateUserStatus}/>
+                <ProfileStatusWithHooks status = {props.status} updateUserStatus = {props.updateUserStatus}/>
                 {props.profile.lookingForAJob ? <span className="profile__job">LF Job</span>
                     : <span className="profile__job" style={{backgroundColor: "#1a1a1d"}}>Unemployed</span>}
             </span>

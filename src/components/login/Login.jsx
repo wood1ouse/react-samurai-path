@@ -15,7 +15,7 @@ const Login = (props) => {
 
 }
 
-let mapStateToProps = (state) => ({isAuth: state.auth.isAuth})
+let mapStateToProps = (state) => ({isAuth: state.auth.isAuth, error: state.auth.error})
 
 export default connect(mapStateToProps, {login})(Login)
 

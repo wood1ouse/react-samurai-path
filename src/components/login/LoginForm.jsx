@@ -3,17 +3,32 @@ import ErrorIcon from '@material-ui/icons/Error';
 import {useFormik} from 'formik'
 
 
-const LoginForm = (props) =>{
+const LoginForm = (props) => {
 
     const initialValues = {
         email: '',
         password: '',
         rememberMe: false,
+        message: ''
     }
 
-    const onSubmit = values => {
-        props.login(values.email, values.password, values.rememberMe)
+    const initialErrors = {
+        email: '',
+        password: '',
     }
+
+    const onSubmit = (values) => {
+        props.login(values.email, values.password, values.rememberMe)
+            .catch(e => {
+                formik.setErrors({
+                    email: e,
+                    password :e
+                })
+            })
+
+
+    }
+
 
     const validate = values => {
         let errors = {}
@@ -29,6 +44,7 @@ const LoginForm = (props) =>{
     }
     const formik = useFormik({
         initialValues,
+        initialErrors,
         onSubmit,
         validate
     })
@@ -37,15 +53,14 @@ const LoginForm = (props) =>{
     return (
         <div className="login">
             <form className="login__form" onSubmit={formik.handleSubmit}>
-                <div className= "login__form__field">
+                <div className="login__form__field">
                     <input className="login__form__loginName"
                            placeholder={formik.errors.email ? formik.errors.email : "Login"}
                            name='email' onChange={formik.handleChange}
                            value={formik.values.email}/>
-                    {formik.errors.email ? <ErrorIcon className= "login__form__loginName__errorIcon" /> : null}
+                    {formik.errors.email ? <ErrorIcon className="login__form__loginName__errorIcon"/> : null}
                 </div>
-
-                <div className= "login__form__field">
+                <div className="login__form__field">
                     <input className="login__form__password" type="password" name='password'
                            placeholder={formik.errors.password ? formik.errors.password : "Password"}
                            onChange={formik.handleChange}
@@ -53,14 +68,17 @@ const LoginForm = (props) =>{
                     {formik.errors.password ? <ErrorIcon className={"login__form__password__errorIcon"}/> : null}
                 </div>
 
+
                 <div className="login__form__checkbox">
                     <input type="checkbox" name="rememberMe" onChange={formik.handleChange}/>
                     <label>Remember Me</label>
                 </div>
+
                 <button type='submit' className="login__form__button">Login</button>
             </form>
         </div>
     )
 }
+
 
 export default LoginForm

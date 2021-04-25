@@ -7,7 +7,6 @@ import DialogsMessageInputContainer from "./DialogsMessageInputContainer";
 
 const Dialogs = (props) => {
 
-
     let dialogsItem = props.dialogsData.map(m => <DialogsItem id={m.id} name={m.name}/>)
     let dialogsMessageOut = props.messagesDataOut.map(m => <DialogsMessageOut id={m.id} msg={m.msg}/>)
     let dialogsMessageIn = props.messagesDataIn.map(m => <DialogsMessageIn id={m.id} msg={m.msg}/>)

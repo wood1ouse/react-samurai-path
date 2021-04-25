@@ -28,7 +28,7 @@ const ProfilePostInput = (props) =>{
     })
 
 
-    const onPostChanged = (e) => {
+    const onPostChanged = e => {
         formik.handleChange(e)
         let text = postContent.current.value
         props.updateNewPostText(text)
