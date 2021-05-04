@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect} from "react-redux";
-import {Route} from "react-router-dom";
+import {BrowserRouter, Route} from "react-router-dom";
 import Header from "../header/Header";
 import ProfileContainer from "../profile/ProfileContainer";
 import DialogsContainer from "../dialogs/DialogsContainer";
@@ -11,7 +11,6 @@ import {compose} from "redux";
 import {initialise} from "../../redux/appReducer";
 import '../../scss/index.scss';
 import Preloader from "../common/preloader/Preloader";
-
 
 
 class App extends React.Component {
@@ -25,19 +24,22 @@ class App extends React.Component {
             return <Preloader/>
         }
         return (
-            <div className="wrapper">
-                <Header/>
-                <div className="content">
-                    <Route path='/profile/:userId?'
-                           render={() => <ProfileContainer/>}/>
-                    <Route path='/dialogs'
-                           render={() => <DialogsContainer/>}/>
-                    <Route path='/users'
-                           render={() => <UsersContainer/>}/>
-                    <Route path='/login'
-                           render={() => <Login/>}/>
+            <BrowserRouter>
+                <div className="wrapper">
+                    <Header/>
+                    <div className="content">
+                        <Route path='/profile/:userId?'
+                               render={() => <ProfileContainer/>}/>
+                        <Route path='/dialogs'
+                               render={() => <DialogsContainer/>}/>
+                        <Route path='/users'
+                               render={() => <UsersContainer/>}/>
+                        <Route path='/login'
+                               render={() => <Login/>}/>
+                    </div>
                 </div>
-            </div>
+            </BrowserRouter>
+
         )
     }
 }

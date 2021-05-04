@@ -8,11 +8,9 @@ import {Provider} from 'react-redux'
 
 let rerenderEntireTree = () => {
     ReactDOM.render(
-            <BrowserRouter>
                 <Provider store={store}>
                     <App />
-                </Provider>
-            </BrowserRouter>,
+                </Provider>,
         document.getElementById('root')
     );
 }
