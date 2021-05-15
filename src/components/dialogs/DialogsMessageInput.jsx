@@ -5,11 +5,11 @@ const DialogsMessageInput = (props) => {
     const MessageContent = React.createRef();
 
     const onAddMessage = () => {
-        this.props.addMessage()
+        props.addMessage()
     }
     const onMessageChanged = () => {
         let text = MessageContent.current.value
-        this.props.updateNewMessageText(text)
+        props.updateNewMessageText(text)
     }
 
         return (

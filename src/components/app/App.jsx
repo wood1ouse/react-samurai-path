@@ -1,5 +1,5 @@
 import React from 'react'
-import {connect} from "react-redux";
+import {connect, Provider} from "react-redux";
 import {BrowserRouter, Route} from "react-router-dom";
 import Header from "../header/Header";
 import ProfileContainer from "../profile/ProfileContainer";
@@ -11,6 +11,7 @@ import {compose} from "redux";
 import {initialise} from "../../redux/appReducer";
 import '../../scss/index.scss';
 import Preloader from "../common/preloader/Preloader";
+import store from "../../redux/reduxStore";
 
 
 class App extends React.Component {
@@ -24,7 +25,6 @@ class App extends React.Component {
             return <Preloader/>
         }
         return (
-            <BrowserRouter>
                 <div className="wrapper">
                     <Header/>
                     <div className="content">
@@ -38,7 +38,6 @@ class App extends React.Component {
                                render={() => <Login/>}/>
                     </div>
                 </div>
-            </BrowserRouter>
 
         )
     }
@@ -48,7 +47,17 @@ const mapStateToProps = (state) => ({
     initialized: state.app.initialized
 })
 
-export default compose(
+let AppContainer = compose(
     withRouter,
     connect(mapStateToProps, {initialise}))(App)
 
+export const SamuraiJSApp = (props) => {
+    return (
+        <BrowserRouter>
+            <Provider store={store}>
+                <AppContainer/>
+            </Provider>
+        </BrowserRouter>
+    )
+
+}

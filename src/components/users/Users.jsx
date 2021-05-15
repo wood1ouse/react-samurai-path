@@ -3,13 +3,9 @@ import ClearIcon from "@material-ui/icons/Clear";
 import AddIcon from "@material-ui/icons/Add";
 import React from "react";
 import {NavLink} from "react-router-dom";
+import {Paginator} from "../common/paginator/Paginator";
 
 let Users = (props) => {
-    let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize)
-    let pages = []
-    for (let i = 1; i <= pagesCount; i++) {
-        pages.push(i)
-    }
     return (
         <>
             <div>
@@ -38,13 +34,13 @@ let Users = (props) => {
                                     {u.followed
                                         ? <button disabled={props.followingInProgress.some(id => id === u.id)}
                                                   onClick={() => {
-                                            props.unfollow(u.id)
+                                                      props.unfollow(u.id)
 
-                                        }}><ClearIcon/></button>
+                                                  }}><ClearIcon/></button>
                                         : <button disabled={props.followingInProgress.some(id => id === u.id)}
                                                   onClick={() => {
-                                            props.follow(u.id)
-                                        }}><AddIcon style={{fontSize: "30px"}}/></button>
+                                                      props.follow(u.id)
+                                                  }}><AddIcon style={{fontSize: "30px"}}/></button>
                                     }
                                 </button>
                             </div>
@@ -52,19 +48,13 @@ let Users = (props) => {
                     </div>
                 )}
             </div>
-            <div className="users__pageList">
-                {pages.map(p => {
-                    return <span
-                        className={props.currentPage === p ? "users__pageList__item selected" : "users__pageList__item"}
-                        onClick={(e) => {
-                            props.onPageChanged(p)
-                        }}>{p}</span>
-                })}
-            </div>
+            <Paginator totalUsersCount={props.totalUsersCount} pageSize={props.pageSize}
+                       currentPage={props.currentPage} onPageChanged={props.onPageChanged}/>
         </>
 
     )
 
 }
+
 
 export default Users
